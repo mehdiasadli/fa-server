@@ -16,6 +16,7 @@ connectToDB()
 
 const verifyUser = require('./middleware/auth.middleware')
 
+app.use('/', (req, res) => res.json({ message: 'WORKING' }))
 app.use('/api/auth', require('./routes/auth.route'))
 app.use('/api/users', verifyUser, require('./routes/user.route'))
 app.use('/api/lectures', verifyUser, require('./routes/lecture.route'))
